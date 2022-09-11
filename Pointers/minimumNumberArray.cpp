@@ -6,27 +6,26 @@ using namespace std;
 int main(){
     int numbersArray[5];
     int *numbersPointer;
-    int *minimum;
+    int minimum = 99999;
 
     numbersPointer = numbersArray;
-    minimum = numbersArray;
 
-    cout << "Please introduce 5 numbers for your array: ";
+    cout << endl << "Please introduce 5 numbers for your array: " << endl;
     
     for (int i = 0; i<5; i++){
 
         cin >> numbersArray[i];
-       
+                
     }
 
     for (int i = 0; i<5; i++){
-        if(numbersPointer <= minimum){
-            minimum = numbersPointer;
+        if(*numbersPointer <= minimum){
+            minimum = *numbersPointer;
         }
         numbersPointer++;
     }
 
-    cout << "The minimum number of the array is " << *minimum; 
+    cout << "The minimum number of the array is " << minimum; 
 
 
     return 0;
